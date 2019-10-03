@@ -3,6 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 const Home = lazy(() => import("../components/Home"));
+const Dashboard = lazy(() => import("../components/Dashboard"));
+
 const All = lazy(() => import("./all"));
 
 const Routes: React.FC = () => (
@@ -26,6 +28,10 @@ const Routes: React.FC = () => (
 
       <Route path="/apps/:query?">
         <All tabIndex={3} />
+      </Route>
+
+      <Route path="/dashboard/">
+        <Dashboard />
       </Route>
     </Suspense>
   </Switch>

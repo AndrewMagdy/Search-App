@@ -24,7 +24,7 @@ function* requestItems(
   }
 }
 
-export function* watchLoadPeoplePage() {
+export function* watchItemsRequest() {
   while (true) {
     const { query, itemType, pageNum, limit } = yield take(
       actions.ITEMS.REQUEST

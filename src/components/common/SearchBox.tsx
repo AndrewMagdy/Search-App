@@ -33,7 +33,6 @@ const SearchBox: React.FC<SearchBoxProps> = ({ history }) => {
   const [value, setValue] = useState("");
 
   const handleSubmit = () => {
-    console.log(value);
     history.replace(`/all/${value}`);
   };
 

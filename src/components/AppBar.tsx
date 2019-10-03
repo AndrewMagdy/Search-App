@@ -5,6 +5,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import SearchBox from "./common/SearchBox";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -31,6 +32,10 @@ export default function ButtonAppBar() {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <SearchBox />
+          <div className={classes.root}> </div>
+          <Button color="inherit" component={Link} to="/dashboard">
+            Dashboard
+          </Button>
         </Toolbar>
       </AppBar>
     </div>

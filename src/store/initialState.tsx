@@ -20,6 +20,12 @@ const initialState: State = {
       query: "",
       pageNum: 1
     }
+  },
+  feedback: {
+    count: {
+      yes: 1,
+      no: 1
+    }
   }
 };
 

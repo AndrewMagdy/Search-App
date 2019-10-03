@@ -2,11 +2,8 @@ import { ITEMS } from "../actions";
 import { Reducer, AnyAction } from "redux";
 
 const itemsReducer: Reducer = (state: any = {}, action: AnyAction) => {
-  console.log(action, state);
-
   switch (action.type) {
     case ITEMS.SUCCESS:
-      console.log("HMM", action.query, state[action.response.itemType]);
       return {
         ...state,
         [action.response.itemType]: {
@@ -21,6 +18,17 @@ const itemsReducer: Reducer = (state: any = {}, action: AnyAction) => {
           query: action.query,
           pageNum: action.response.pageNum
         }
+      };
+    case ITEMS.REQUEST:
+      return {
+        ...state,
+        isFetching: true
+      };
+    case ITEMS.ERROR:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.error
       };
     default:
       return state;

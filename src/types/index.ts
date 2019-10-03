@@ -7,6 +7,12 @@ export interface State {
       pageNum: number;
     };
   };
+  feedback: {
+    count: {
+      yes: number;
+      no: number;
+    };
+  };
 }
 
 export interface Item {

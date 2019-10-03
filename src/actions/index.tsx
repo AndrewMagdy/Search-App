@@ -28,3 +28,11 @@ export const items = {
   failure: (query: string, error: Error) =>
     action(ITEMS[FAILURE], { query, error })
 };
+
+export const FEEDBACK = createRequestTypes("FEEDBACK");
+
+export const feedback = {
+  request: () => action(FEEDBACK[REQUEST]),
+  success: (response: any) => action(FEEDBACK[SUCCESS], { response }),
+  failure: (error: Error) => action(FEEDBACK[FAILURE], error)
+};
