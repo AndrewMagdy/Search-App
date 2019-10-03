@@ -5,17 +5,20 @@ const initialState: State = {
     people: {
       isFetching: false,
       items: [],
-      query: ""
+      query: "",
+      pageNum: 1
     },
     files: {
       isFetching: false,
       items: [],
-      query: ""
+      query: "",
+      pageNum: 1
     },
     apps: {
       isFetching: false,
       items: [],
-      query: ""
+      query: "",
+      pageNum: 1
     }
   }
 };

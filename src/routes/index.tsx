@@ -3,7 +3,6 @@ import { Switch, Route } from "react-router-dom";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 const Home = lazy(() => import("../components/Home"));
-const Items = lazy(() => import("../containers/Items.container"));
 const All = lazy(() => import("./all"));
 
 const Routes: React.FC = () => (
@@ -14,19 +13,19 @@ const Routes: React.FC = () => (
       </Route>
 
       <Route path="/all/:query?">
-        <All />
+        <All tabIndex={0} />
       </Route>
 
       <Route path="/people/:query?">
-        <Items itemType="people" />
+        <All tabIndex={1} />
       </Route>
 
       <Route path="/files/:query?">
-        <Items itemType="files" />
+        <All tabIndex={2} />
       </Route>
 
       <Route path="/apps/:query?">
-        <Items itemType="apps" />
+        <All tabIndex={3} />
       </Route>
     </Suspense>
   </Switch>

@@ -15,7 +15,8 @@ function* requestItems(
     yield put(
       items.success(query, {
         items: normalizedResponse,
-        itemType
+        itemType,
+        pageNum
       })
     );
   } catch (error) {

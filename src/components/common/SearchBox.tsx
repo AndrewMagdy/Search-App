@@ -4,7 +4,7 @@ import Paper from "@material-ui/core/Paper";
 import InputBase from "@material-ui/core/InputBase";
 import IconButton from "@material-ui/core/IconButton";
 import SearchIcon from "@material-ui/icons/Search";
-import { withRouter, RouteComponentProps } from "react-router";
+import { withRouter } from "react-router";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -27,22 +27,23 @@ const useStyles = makeStyles((theme: Theme) =>
 interface SearchBoxProps {
   history: any;
 }
+
 const SearchBox: React.FC<SearchBoxProps> = ({ history }) => {
   const classes = useStyles();
   const [value, setValue] = useState("");
 
   const handleSubmit = () => {
     console.log(value);
-    history.replace(`all/${value}`);
+    history.replace(`/all/${value}`);
   };
 
-  const handleKeyPress = (ev: React.KeyboardEvent) => {
+  const handleKeyPress = (ev: React.KeyboardEvent<{}>) => {
     if (ev.key === "Enter") {
       handleSubmit();
     }
   };
 
-  const handleChange = (ev: any) => {
+  const handleChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setValue(ev.target.value);
   };
 

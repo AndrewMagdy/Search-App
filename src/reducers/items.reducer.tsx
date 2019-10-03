@@ -6,6 +6,7 @@ const itemsReducer: Reducer = (state: any = {}, action: AnyAction) => {
 
   switch (action.type) {
     case ITEMS.SUCCESS:
+      console.log("HMM", action.query, state[action.response.itemType]);
       return {
         ...state,
         [action.response.itemType]: {
@@ -16,7 +17,9 @@ const itemsReducer: Reducer = (state: any = {}, action: AnyAction) => {
                   ...action.response.items
                 ]
               : action.response.items,
-          isFetching: false
+          isFetching: false,
+          query: action.query,
+          pageNum: action.response.pageNum
         }
       };
     default:
